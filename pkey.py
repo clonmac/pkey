@@ -4,7 +4,7 @@ first10 = ''
 
 def hash_func(var):
     hasher = 0
-    hasher = hashlib.sha1()
+    hasher = hashlib.sha256()
     hasher.update(var)
     hashvalue = hasher.hexdigest()
     return hashvalue
