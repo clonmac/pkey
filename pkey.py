@@ -1,6 +1,8 @@
 import hashlib
 
 first10 = ''
+specials = '!@#$%^&*()'
+count = 0
 
 def hash_func(var):
     hasher = 0
@@ -32,6 +34,12 @@ password = hash_func(combined_pass)
 for letter in password[0:9]:
 	first10 = first10 + rot(letter, 15)
 
-final_password = first10[0:4].upper() + '@' + first10[5:9].upper() + '#' + password[10:12] + '!' + password[13:18]
+for i in range(9):
+	if first10[i].isdigit():
+		final_password = first10.replace(first10[i], specials[int(first10[i])])
+		break;
+
+final_password = final_password.upper() + password[10:18]
 
 print final_password
+
