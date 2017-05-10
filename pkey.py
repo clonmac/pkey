@@ -24,7 +24,6 @@ def rot(c,n):								#Rotation function
 def random_int(p):							#Random integer function
 	for n in p:
 		if n.isdigit():
-			print n
 			return int(n)
 
 domain = raw_input("Domain: ")
